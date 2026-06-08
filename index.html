@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Google Ads HVSB — Sigma Assessoria</title>
+<meta name="description" content="Como o Hospital Veterinário São Bernardo dobrou conversões, cortou custos pela metade e gerou R$45.001 com R$3.499 investidos no Google Ads.">
+<meta property="og:title" content="Case Google Ads HVSB — 12,86x ROAS · Sigma Assessoria">
+<meta property="og:description" content="De invisível a líder: como o São Bernardo dobrou conversões e cortou custos pela metade.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ─── RESET & BASE ─── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg-dark: #0a1628;
+    --bg-dark2: #0f1e38;
+    --primary: #1a3a5c;
+    --accent: #2e75b6;
+    --accent-light: #4a94d4;
+    --success: #27ae60;
+    --warning: #e67e22;
+    --danger: #c0392b;
+    --bg-light: #f2f5f8;
+    --text: #1a2a3a;
+    --text-muted: #6b7c93;
+    --border: #e0e8f0;
+    --gold: #c9a84c;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    background: #fff;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ─── PROGRESS BAR ─── */
+  #progress-bar {
+    position: fixed; top: 0; left: 0; height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--gold));
+    width: 0%; z-index: 1000;
+    transition: width 0.1s linear;
+  }
+
+  /* ─── TOPBAR ─── */
+  .topbar {
+    position: fixed; top: 3px; left: 0; right: 0;
+    padding: 14px 40px;
+    display: flex; align-items: center; justify-content: space-between;
+    z-index: 999;
+    background: rgba(10, 22, 40, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .topbar-logo { color: #fff; font-size: 14px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; opacity: 0.8; }
+  .topbar-tag {
+    font-size: 12px; color: var(--accent-light);
+    background: rgba(46,117,182,0.15);
+    padding: 4px 12px; border-radius: 20px;
+    border: 1px solid rgba(46,117,182,0.3);
+    font-weight: 500; letter-spacing: 0.5px;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    background: var(--bg-dark);
+    min-height: 100vh;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: 120px 24px 80px;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 30% 50%, rgba(46,117,182,0.12) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 20%, rgba(201,168,76,0.06) 0%, transparent 50%);
+  }
+  .hero-content { position: relative; z-index: 1; max-width: 800px; }
+  .hero-eyebrow {
+    display: inline-block;
+    font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--accent-light);
+    background: rgba(46,117,182,0.15);
+    border: 1px solid rgba(46,117,182,0.3);
+    padding: 6px 18px; border-radius: 20px; margin-bottom: 28px;
+  }
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    color: #fff; line-height: 1.2; margin-bottom: 20px;
+  }
+  .hero h1 em { font-style: italic; color: var(--gold); }
+  .hero-sub {
+    font-size: 16px; color: rgba(255,255,255,0.55);
+    margin-bottom: 60px; font-weight: 400;
+  }
+  .hero-numbers {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1px; background: rgba(255,255,255,0.08);
+    border-radius: 16px; overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .hero-number {
+    background: rgba(255,255,255,0.04);
+    padding: 32px 24px;
+    display: flex; flex-direction: column; align-items: center;
+  }
+  .hero-number .val {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    color: #fff; line-height: 1;
+    margin-bottom: 8px;
+  }
+  .hero-number .val.green { color: var(--success); }
+  .hero-number .val.gold { color: var(--gold); }
+  .hero-number .val.blue { color: var(--accent-light); }
+  .hero-number .label {
+    font-size: 12px; color: rgba(255,255,255,0.45);
+    text-transform: uppercase; letter-spacing: 1px; font-weight: 500;
+  }
+
+  /* ─── SECTIONS ─── */
+  section { padding: 80px 24px; }
+  .container { max-width: 1000px; margin: 0 auto; }
+  .section-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 2.5px;
+    text-transform: uppercase; color: var(--accent);
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    color: var(--text); line-height: 1.25; margin-bottom: 40px;
+  }
+  .section-title em { font-style: italic; color: var(--accent); }
+
+  /* ─── CLIENTE ─── */
+  .cliente-section { background: #fff; }
+  .cliente-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start;
+  }
+  .cliente-text p { font-size: 17px; color: var(--text); line-height: 1.75; }
+  .stats-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+  }
+  .stat-card {
+    background: var(--bg-light);
+    border-radius: 12px; padding: 20px;
+    border: 1px solid var(--border);
+    opacity: 0; transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .stat-card.visible { opacity: 1; transform: translateY(0); }
+  .stat-card .num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.8rem; color: var(--accent); line-height: 1;
+    margin-bottom: 4px;
+  }
+  .stat-card .desc { font-size: 13px; color: var(--text-muted); font-weight: 500; }
+
+  /* ─── DESAFIO ─── */
+  .desafio-section { background: var(--bg-light); }
+  .desafio-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .desafio-card {
+    background: #fff; border-radius: 16px; padding: 28px;
+    border: 1px solid var(--border);
+    opacity: 0; transform: translateY(24px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .desafio-card.visible { opacity: 1; transform: translateY(0); }
+  .desafio-icon {
+    width: 40px; height: 40px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; margin-bottom: 16px;
+  }
+  .desafio-icon.red { background: rgba(192,57,43,0.1); }
+  .desafio-icon.yellow { background: rgba(230,126,34,0.1); }
+  .desafio-icon.green { background: rgba(39,174,96,0.1); }
+  .desafio-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 10px; color: var(--text); }
+  .desafio-card p { font-size: 14px; color: var(--text-muted); line-height: 1.65; }
+
+  /* ─── ESTRATÉGIA ─── */
+  .estrategia-section { background: #fff; }
+  .timeline { position: relative; padding-left: 40px; }
+  .timeline::before {
+    content: ''; position: absolute; left: 12px; top: 0; bottom: 0;
+    width: 2px; background: linear-gradient(180deg, var(--accent), rgba(46,117,182,0.1));
+  }
+  .timeline-item {
+    position: relative; margin-bottom: 40px;
+    opacity: 0; transform: translateX(-20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .timeline-item.visible { opacity: 1; transform: translateX(0); }
+  .timeline-dot {
+    position: absolute; left: -34px; top: 4px;
+    width: 24px; height: 24px; border-radius: 50%;
+    background: var(--accent); color: #fff;
+    font-size: 11px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 3px rgba(46,117,182,0.2);
+  }
+  .timeline-item h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; color: var(--text); }
+  .timeline-item p { font-size: 14px; color: var(--text-muted); line-height: 1.65; }
+
+  /* ─── RESULTADOS ─── */
+  .resultados-section { background: var(--bg-light); }
+
+  /* comparativo */
+  .comparativo-title {
+    font-size: 14px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 1px; color: var(--text-muted); margin-bottom: 20px;
+  }
+  .comparativo-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 48px; }
+  .comp-card {
+    background: #fff; border-radius: 14px; padding: 22px 18px;
+    border: 1px solid var(--border);
+    opacity: 0; transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .comp-card.visible { opacity: 1; transform: translateY(0); }
+  .comp-card .metric { font-size: 12px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 14px; }
+  .comp-card .before { font-size: 13px; color: var(--text-muted); margin-bottom: 4px; }
+  .comp-card .before span { font-weight: 600; color: var(--text); }
+  .comp-card .after { font-size: 13px; color: var(--text-muted); margin-bottom: 12px; }
+  .comp-card .after span { font-weight: 600; color: var(--text); }
+  .comp-card .delta {
+    display: inline-flex; align-items: center; gap: 4px;
+    font-size: 18px; font-weight: 700; padding: 4px 0;
+  }
+  .delta.good { color: var(--success); }
+  .delta.great { color: var(--success); }
+
+  /* maio destaque */
+  .maio-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 32px; }
+  .maio-main {
+    background: var(--bg-dark);
+    border-radius: 20px; padding: 40px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    opacity: 0; transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .maio-main.visible { opacity: 1; transform: translateY(0); }
+  .maio-main .roas-label { font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 8px; }
+  .maio-main .roas-val {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(4rem, 10vw, 6rem); color: var(--gold);
+    line-height: 1; margin-bottom: 8px;
+  }
+  .maio-main .roas-sub { font-size: 13px; color: rgba(255,255,255,0.45); margin-bottom: 32px; }
+  .maio-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .maio-metric { }
+  .maio-metric .mv { font-size: 18px; font-weight: 700; color: #fff; }
+  .maio-metric .ml { font-size: 11px; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 2px; }
+
+  .maio-side { display: flex; flex-direction: column; gap: 20px; }
+  .maio-side-card {
+    background: #fff; border-radius: 16px; padding: 24px;
+    border: 1px solid var(--border); flex: 1;
+    opacity: 0; transform: translateX(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .maio-side-card.visible { opacity: 1; transform: translateX(0); }
+  .maio-side-card .sc-label { font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+  .maio-side-card .sc-val { font-family: 'DM Serif Display', serif; font-size: 2rem; color: var(--text); }
+  .maio-side-card .sc-desc { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+
+  .impact-phrase {
+    background: linear-gradient(135deg, var(--accent), #1a5c9a);
+    border-radius: 16px; padding: 28px 32px;
+    text-align: center;
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    color: #fff; font-style: italic;
+    opacity: 0; transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .impact-phrase.visible { opacity: 1; transform: translateY(0); }
+
+  /* donut chart */
+  .chart-section {
+    margin-top: 40px;
+    display: grid; grid-template-columns: auto 1fr; gap: 40px; align-items: center;
+  }
+  .donut-wrap { position: relative; width: 180px; height: 180px; }
+  .donut-wrap svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+  .donut-center {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    font-family: 'DM Serif Display', serif;
+  }
+  .donut-center .pct { font-size: 2rem; color: var(--accent); line-height: 1; }
+  .donut-center .lbl { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; font-family: 'DM Sans', sans-serif; }
+  .chart-legend { }
+  .chart-legend h4 { font-size: 14px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; }
+  .legend-item { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+  .legend-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+  .legend-item .li-label { font-size: 14px; color: var(--text); font-weight: 500; }
+  .legend-item .li-pct { font-size: 14px; font-weight: 700; margin-left: auto; }
+  .legend-item .li-val { font-size: 12px; color: var(--text-muted); }
+
+  /* ─── BREAKDOWN ─── */
+  .breakdown-section { background: #fff; }
+  .tickets-table {
+    width: 100%; border-collapse: collapse; margin-bottom: 40px;
+  }
+  .tickets-table th {
+    text-align: left; font-size: 11px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted);
+    padding: 12px 16px; border-bottom: 2px solid var(--border);
+  }
+  .tickets-table td {
+    padding: 16px 16px; border-bottom: 1px solid var(--border);
+    font-size: 15px; color: var(--text);
+  }
+  .tickets-table tr:last-child td { border-bottom: none; }
+  .tickets-table tr { opacity: 0; transform: translateX(-16px); transition: opacity 0.4s ease, transform 0.4s ease; }
+  .tickets-table tr.visible { opacity: 1; transform: translateX(0); }
+  .ticket-val { font-weight: 700; color: var(--success); }
+  .rank { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; background: var(--bg-light); font-size: 12px; font-weight: 700; color: var(--text-muted); }
+  .rank-1 { background: rgba(201,168,76,0.15); color: var(--gold); }
+  .rank-2 { background: rgba(46,117,182,0.1); color: var(--accent); }
+  .rank-3 { background: rgba(39,174,96,0.1); color: var(--success); }
+
+  .tipo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .tipo-card {
+    background: var(--bg-light); border-radius: 12px; padding: 20px;
+    border: 1px solid var(--border);
+    opacity: 0; transform: translateY(16px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+  .tipo-card.visible { opacity: 1; transform: translateY(0); }
+  .tipo-card .tipo-label { font-size: 13px; font-weight: 600; color: var(--text-muted); margin-bottom: 8px; }
+  .tipo-bar-bg { height: 6px; background: var(--border); border-radius: 3px; overflow: hidden; margin-bottom: 8px; }
+  .tipo-bar-fill { height: 100%; border-radius: 3px; background: var(--accent); transition: width 1s ease; width: 0; }
+  .tipo-card .tipo-desc { font-size: 12px; color: var(--text-muted); }
+
+  /* ─── CONCLUSÃO ─── */
+  .conclusao-section {
+    background: var(--bg-dark);
+    text-align: center; padding: 100px 24px;
+  }
+  .conclusao-section .section-label { color: rgba(255,255,255,0.4); }
+  .conclusao-section .section-title { color: #fff; }
+  .conclusao-section .section-title em { color: var(--gold); }
+  .conclusao-text { font-size: 17px; color: rgba(255,255,255,0.6); max-width: 680px; margin: 0 auto 60px; line-height: 1.8; }
+  .big-number-wrap {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 24px; padding: 48px;
+    display: inline-block; margin-bottom: 60px;
+    opacity: 0; transform: scale(0.95);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .big-number-wrap.visible { opacity: 1; transform: scale(1); }
+  .big-number-wrap .bn-top { font-size: 13px; color: rgba(255,255,255,0.35); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; }
+  .big-number-wrap .bn-val {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.5rem, 7vw, 4.5rem); color: var(--gold);
+    line-height: 1; margin-bottom: 8px;
+  }
+  .big-number-wrap .bn-sub { font-size: 14px; color: rgba(255,255,255,0.3); }
+  .inv-line { font-size: 15px; color: rgba(255,255,255,0.3); margin-bottom: 4px; }
+  .inv-val { font-size: 22px; font-weight: 700; color: rgba(255,255,255,0.6); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: #060e1a;
+    text-align: center; padding: 28px 24px;
+    font-size: 13px; color: rgba(255,255,255,0.25);
+    border-top: 1px solid rgba(255,255,255,0.04);
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 768px) {
+    .topbar { padding: 12px 20px; }
+    .hero-numbers { grid-template-columns: 1fr; }
+    .cliente-grid { grid-template-columns: 1fr; gap: 40px; }
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+    .desafio-cards { grid-template-columns: 1fr; }
+    .comparativo-grid { grid-template-columns: 1fr 1fr; }
+    .maio-grid { grid-template-columns: 1fr; }
+    .chart-section { grid-template-columns: 1fr; justify-items: center; }
+    .tipo-grid { grid-template-columns: 1fr; }
+    .timeline { padding-left: 30px; }
+  }
+</style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<!-- TOPBAR -->
+<header class="topbar">
+  <span class="topbar-logo">Sigma Assessoria</span>
+  <span class="topbar-tag">Case de Resultados · Google Ads</span>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <span class="hero-eyebrow">Hospital Veterinário São Bernardo · Curitiba/PR · Jan–Mai 2026</span>
+    <h1>De invisível a líder: como o São Bernardo <em>dobrou conversões</em> e cortou custos pela metade</h1>
+    <p class="hero-sub">Google Ads · Análise completa do período</p>
+    <div class="hero-numbers">
+      <div class="hero-number">
+        <span class="val gold" data-count="12.86" data-suffix="x" data-decimals="2">0x</span>
+        <span class="label">ROAS em maio</span>
+      </div>
+      <div class="hero-number">
+        <span class="val blue" data-count="39.9" data-suffix="%" data-decimals="1">0%</span>
+        <span class="label">do faturamento via Google</span>
+      </div>
+      <div class="hero-number">
+        <span class="val green" data-prefix="-" data-count="50" data-suffix="%" data-decimals="0">0%</span>
+        <span class="label">no custo por conversão</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEÇÃO 2: O CLIENTE -->
+<section class="cliente-section">
+  <div class="container">
+    <div class="cliente-grid">
+      <div class="cliente-text">
+        <p class="section-label">O Cliente</p>
+        <h2 class="section-title">57 anos de tradição em medicina veterinária</h2>
+        <p>O Hospital Veterinário São Bernardo é referência em medicina veterinária em Curitiba há 57 anos. Com estrutura hospitalar completa — UTI, centro cirúrgico, internação 24h e mais de 20 especialistas — o hospital atende cerca de 100 pacientes por dia e já realizou mais de 400 mil atendimentos desde sua fundação.</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="num">57</div>
+          <div class="desc">anos de tradição</div>
+        </div>
+        <div class="stat-card">
+          <div class="num">400mil+</div>
+          <div class="desc">atendimentos realizados</div>
+        </div>
+        <div class="stat-card">
+          <div class="num">20+</div>
+          <div class="desc">especialistas</div>
+        </div>
+        <div class="stat-card">
+          <div class="num">100/dia</div>
+          <div class="desc">atendimentos diários</div>
+        </div>
+        <div class="stat-card">
+          <div class="num">24h</div>
+          <div class="desc">operação contínua</div>
+        </div>
+        <div class="stat-card">
+          <div class="num">4,6 ⭐</div>
+          <div class="desc">800+ avaliações Google</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEÇÃO 3: DESAFIO -->
+<section class="desafio-section">
+  <div class="container">
+    <p class="section-label">O Desafio</p>
+    <h2 class="section-title">O problema que precisávamos resolver</h2>
+    <div class="desafio-cards">
+      <div class="desafio-card">
+        <div class="desafio-icon red">🔴</div>
+        <h3>Campanhas sem estrutura</h3>
+        <p>Palavras-chave em espanhol, grupos de anúncios misturando intenções completamente diferentes — emergência junto com rotina — e anúncios genéricos sem nenhum dos reais diferenciais do hospital.</p>
+      </div>
+      <div class="desafio-card">
+        <div class="desafio-icon yellow">🟡</div>
+        <h3>Zero conversão com verba rodando</h3>
+        <p>151 cliques em um grupo sem nenhuma conversão registrada. A verba estava sendo gasta, mas nenhum lead chegava ao hospital de forma rastreável. Dinheiro evaporando sem retorno mensurável.</p>
+      </div>
+      <div class="desafio-card">
+        <div class="desafio-icon green">🟢</div>
+        <h3>Posicionamento genérico</h3>
+        <p>Anúncios que poderiam ser de qualquer clínica veterinária — sem mencionar 57 anos de tradição, UTI, 400 mil atendimentos ou as qualificações reais da equipe. Sem diferencial competitivo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEÇÃO 4: ESTRATÉGIA -->
+<section class="estrategia-section">
+  <div class="container">
+    <p class="section-label">A Solução</p>
+    <h2 class="section-title">A estratégia de <em>otimização</em></h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot">1</div>
+        <h3>Auditoria completa</h3>
+        <p>Mapeamento de todas as campanhas, grupos de anúncios, palavras-chave e anúncios ativos. Identificação precisa dos pontos de vazamento de verba e campanhas com custo sem retorno.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot">2</div>
+        <h3>Reestruturação por intenção de busca</h3>
+        <p>Separação de grupos por intenção real do tutor: hospital/consulta, emergência/24h e marca. Cada grupo passou a ter palavras-chave, anúncios e páginas de destino específicos para cada perfil de busca.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot">3</div>
+        <h3>Novos anúncios com diferenciais reais</h3>
+        <p>Substituição do copy genérico por headlines que comunicam os reais diferenciais do hospital: "57 Anos de Tradição", "400 Mil Atendimentos", "UTI e Cirurgia 24h", "4,6 no Google — 800 Avaliações".</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot">4</div>
+        <h3>Limpeza de palavras-chave</h3>
+        <p>Remoção de palavras em espanhol (zero volume qualificado em Curitiba), termos amplos demais e palavras com intenção errada. Adição de 19 negativas de campanha para qualificar o tráfego.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot">5</div>
+        <h3>Rastreamento e conversões</h3>
+        <p>Verificação e correção das tags de conversão. Configuração de eventos de WhatsApp e ligação como conversões rastreáveis — permitindo medir com precisão o retorno de cada real investido.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEÇÃO 5: RESULTADOS -->
+<section class="resultados-section">
+  <div class="container">
+    <p class="section-label">Os Resultados</p>
+    <h2 class="section-title">Os números <em>falam por si</em></h2>
+
+    <p class="comparativo-title">Comparativo Março × Abril 2026</p>
+    <div class="comparativo-grid">
+      <div class="comp-card">
+        <div class="metric">Cliques</div>
+        <div class="before">Mar: <span>801</span></div>
+        <div class="after">Abr: <span>2.730</span></div>
+        <div class="delta good">↑ +241%</div>
+      </div>
+      <div class="comp-card">
+        <div class="metric">Conversões</div>
+        <div class="before">Mar: <span>136</span></div>
+        <div class="after">Abr: <span>266</span></div>
+        <div class="delta good">↑ +96%</div>
+      </div>
+      <div class="comp-card">
+        <div class="metric">Custo/conversão</div>
+        <div class="before">Mar: <span>R$21,22</span></div>
+        <div class="after">Abr: <span>R$10,56</span></div>
+        <div class="delta great">↓ -50%</div>
+      </div>
+      <div class="comp-card">
+        <div class="metric">Investimento</div>
+        <div class="before">Mar: <span>R$2.890</span></div>
+        <div class="after">Abr: <span>R$2.810</span></div>
+        <div class="delta good">↓ -3%</div>
+      </div>
+    </div>
+
+    <p class="comparativo-title">Resultados de Maio 2026</p>
+    <div class="maio-grid">
+      <div class="maio-main">
+        <div>
+          <div class="roas-label">ROAS</div>
+          <div class="roas-val" data-count="12.86" data-suffix="x" data-decimals="2">0x</div>
+          <div class="roas-sub">Retorno sobre investimento em anúncios</div>
+        </div>
+        <div class="maio-metrics">
+          <div class="maio-metric">
+            <div class="mv">R$45.001</div>
+            <div class="ml">Receita gerada</div>
+          </div>
+          <div class="maio-metric">
+            <div class="mv">R$3.499</div>
+            <div class="ml">Investimento</div>
+          </div>
+          <div class="maio-metric">
+            <div class="mv">43</div>
+            <div class="ml">Clientes via Google</div>
+          </div>
+          <div class="maio-metric">
+            <div class="mv">R$1.046</div>
+            <div class="ml">Ticket médio</div>
+          </div>
+        </div>
+      </div>
+      <div class="maio-side">
+        <div class="maio-side-card">
+          <div class="sc-label">Faturamento total do mês</div>
+          <div class="sc-val">R$112.834</div>
+          <div class="sc-desc">Receita total do hospital em maio 2026</div>
+        </div>
+        <div class="maio-side-card">
+          <div class="sc-label">Participação do Google</div>
+          <div class="sc-val" style="color: var(--accent);">39,9%</div>
+          <div class="sc-desc">Quase 40% do faturamento total veio do Google Ads</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="impact-phrase">
+      "Cada real investido no Google Ads retornou R$12,86 em receita para o hospital."
+    </div>
+
+    <!-- Donut Chart -->
+    <div class="chart-section">
+      <div class="donut-wrap">
+        <svg viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="40" fill="none" stroke="#e0e8f0" stroke-width="14"/>
+          <circle cx="50" cy="50" r="40" fill="none" stroke="var(--accent)" stroke-width="14"
+            stroke-dasharray="251.2" stroke-dashoffset="251.2"
+            id="donut-arc" style="transition: stroke-dashoffset 1.5s ease; stroke-linecap: round;"/>
+        </svg>
+        <div class="donut-center">
+          <span class="pct">39,9%</span>
+          <span class="lbl">Google</span>
+        </div>
+      </div>
+      <div class="chart-legend">
+        <h4>Origem do faturamento — Maio 2026</h4>
+        <div class="legend-item">
+          <span class="legend-dot" style="background: var(--accent);"></span>
+          <span class="li-label">Google Ads</span>
+          <span class="li-pct" style="color: var(--accent);">39,9%</span>
+        </div>
+        <div style="font-size:13px; color: var(--text-muted); padding-left: 24px; margin-top: -8px; margin-bottom: 14px;">R$45.001,48</div>
+        <div class="legend-item">
+          <span class="legend-dot" style="background: #d0dce8;"></span>
+          <span class="li-label">Outros canais</span>
+          <span class="li-pct" style="color: var(--text-muted);">60,1%</span>
+        </div>
+        <div style="font-size:13px; color: var(--text-muted); padding-left: 24px; margin-top: -8px;">R$67.833,03</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SEÇÃO 6: BREAKDOWN -->
+<section class="breakdown-section">
+  <div class="container">
+    <p class="section-label">Breakdown de Maio</p>
+    <h2 class="section-title">De onde veio a receita do Google</h2>
+
+    <table class="tickets-table">
+      <thead>
+        <tr class="visible">
+          <th>#</th>
+          <th>Cliente</th>
+          <th>Tipo de atendimento</th>
+          <th style="text-align:right;">Valor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="rank rank-1">1</span></td>
+          <td><strong>Adriel</strong></td>
+          <td>Consulta clínico geral</td>
+          <td class="ticket-val" style="text-align:right;">R$16.826,43</td>
+        </tr>
+        <tr>
+          <td><span class="rank rank-2">2</span></td>
+          <td><strong>Ederson</strong></td>
+          <td>Internação</td>
+          <td class="ticket-val" style="text-align:right;">R$11.991,25</td>
+        </tr>
+        <tr>
+          <td><span class="rank rank-3">3</span></td>
+          <td><strong>Vinicius</strong></td>
+          <td>Internação</td>
+          <td class="ticket-val" style="text-align:right;">R$9.823,93</td>
+        </tr>
+        <tr>
+          <td><span class="rank">4</span></td>
+          <td><strong>Megg</strong></td>
+          <td>Consulta clínico geral</td>
+          <td class="ticket-val" style="text-align:right;">R$7.654,23</td>
+        </tr>
+        <tr>
+          <td><span class="rank">5</span></td>
+          <td><strong>Luciana</strong></td>
+          <td>Consulta clínico geral</td>
+          <td class="ticket-val" style="text-align:right;">R$2.926,61</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="comparativo-title" style="margin-top:40px;">Distribuição por tipo de atendimento (Google)</p>
+    <div class="tipo-grid">
+      <div class="tipo-card">
+        <div class="tipo-label">Clínico geral</div>
+        <div class="tipo-bar-bg"><div class="tipo-bar-fill" data-width="78"></div></div>
+        <div class="tipo-desc">Maior volume · ticket variável</div>
+      </div>
+      <div class="tipo-card">
+        <div class="tipo-label">Especialistas</div>
+        <div class="tipo-bar-bg"><div class="tipo-bar-fill" data-width="54" style="background: var(--gold);"></div></div>
+        <div class="tipo-desc">Segundo maior volume</div>
+      </div>
+      <div class="tipo-card">
+        <div class="tipo-label">Internações</div>
+        <div class="tipo-bar-bg"><div class="tipo-bar-fill" data-width="32" style="background: var(--success);"></div></div>
+        <div class="tipo-desc">Menor volume · maior ticket</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEÇÃO 7: CONCLUSÃO -->
+<section class="conclusao-section">
+  <div class="container">
+    <p class="section-label">Conclusão</p>
+    <h2 class="section-title" style="max-width:680px; margin: 0 auto 24px;">O Google Ads representa hoje <em>quase 40%</em> do faturamento do São Bernardo</h2>
+    <p class="conclusao-text">Com estrutura bem otimizada, copy alinhado com os reais diferenciais do hospital e rastreamento correto, o Google Ads deixou de ser um custo e passou a ser o principal canal de aquisição do hospital. O próximo passo é escalar o investimento com o processo comercial alinhado para converter ainda mais leads em atendimentos.</p>
+
+    <div class="big-number-wrap">
+      <div class="bn-top">Receita gerada em maio</div>
+      <div class="bn-val">R$45.001,48</div>
+      <div class="bn-sub" style="margin-bottom:20px;">gerados com</div>
+      <div class="inv-line">investimento de</div>
+      <div class="inv-val">R$3.499,74</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Sigma Assessoria &nbsp;·&nbsp; Case HVSB &nbsp;·&nbsp; 2026 &nbsp;·&nbsp; sigma.com.br
+</footer>
+
+<script>
+  // ─── PROGRESS BAR ───
+  window.addEventListener('scroll', () => {
+    const doc = document.documentElement;
+    const top = doc.scrollTop || document.body.scrollTop;
+    const height = doc.scrollHeight - doc.clientHeight;
+    document.getElementById('progress-bar').style.width = (top / height * 100) + '%';
+  });
+
+  // ─── COUNTER ANIMATION ───
+  function animateCounter(el) {
+    const target = parseFloat(el.dataset.count);
+    const decimals = parseInt(el.dataset.decimals || '0');
+    const suffix = el.dataset.suffix || '';
+    const prefix = el.dataset.prefix || '';
+    const duration = 1800;
+    const start = performance.now();
+    function step(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      const ease = 1 - Math.pow(1 - progress, 3);
+      const val = (ease * target).toFixed(decimals);
+      el.textContent = prefix + val + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  // ─── INTERSECTION OBSERVER ───
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+
+      // counter
+      if (el.dataset.count) animateCounter(el);
+
+      // generic visible class
+      el.classList.add('visible');
+
+      // donut arc
+      if (el.id === 'donut-arc') {
+        const circumference = 251.2;
+        const offset = circumference * (1 - 0.399);
+        el.style.strokeDashoffset = offset;
+      }
+
+      // tipo bars
+      if (el.classList.contains('tipo-card')) {
+        const bar = el.querySelector('.tipo-bar-fill');
+        if (bar) bar.style.width = bar.dataset.width + '%';
+      }
+
+      io.unobserve(el);
+    });
+  }, { threshold: 0.2 });
+
+  // observe hero numbers
+  document.querySelectorAll('.hero-number .val[data-count]').forEach(el => {
+    // trigger immediately for hero
+    setTimeout(() => animateCounter(el), 400);
+  });
+
+  // observe everything else
+  document.querySelectorAll(
+    '.stat-card, .desafio-card, .timeline-item, .comp-card, ' +
+    '.maio-main, .maio-side-card, .impact-phrase, #donut-arc, ' +
+    '.tipo-card, .tickets-table tbody tr, .big-number-wrap, ' +
+    '.resultados-section .roas-val[data-count]'
+  ).forEach(el => io.observe(el));
+</script>
+</body>
+</html>
